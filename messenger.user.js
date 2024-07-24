@@ -170,11 +170,12 @@ async function initIFrame() {
   const chatButtonWrapper = targetButtonWrapper.cloneNode(true);
   const chatButton = chatButtonWrapper.querySelector('button');
 
-  chatButton.innerHTML = '<svg class="icon bell__button-icon icon--messenger" style="transform: none; pointer-events: none" width="24" height="24"><use xlink:href="#messenger"></use></svg>';
+  chatButton.innerHTML = '<svg class="icon bell__button-icon icon--messenger" style="transform: none; pointer-events: none;" width="24" height="24"><use xlink:href="#messenger"></use></svg>';
   chatButton.onclick = toggleIFrame;
 
   const counterElement = document.createElement('div');
   counterElement.classList = 'counter-label bell__unread-count';
+  counterElement.style = 'pointer-events: none;';
 
   header.querySelector('.header__right').prepend(chatButtonWrapper);
 
